@@ -1,0 +1,18 @@
+flowchart LR
+  A[Smart meter data] --> B[Energy intelligence\nNILM layer]
+  B --> C[Appliance-level\nconsumption]
+  C --> D[Live home signal]
+  D --> E[Anomaly alerts]
+  D --> F[Energy forecast]
+  D --> G[Actionable recommendations]
+  G --> H[Lower usage\nand monthly savings]
+
+  classDef source fill:#202526,stroke:#f7ad32,color:#fff,stroke-width:2px;
+  classDef intelligence fill:#3f6f69,stroke:#b9dfd4,color:#fff,stroke-width:2px;
+  classDef insight fill:#f3e8bd,stroke:#d8ad4d,color:#3b3730,stroke-width:1.5px;
+  classDef outcome fill:#f7ad32,stroke:#f7ad32,color:#202526,stroke-width:2px;
+
+  class A source;
+  class B intelligence;
+  class C,D,E,F,G insight;
+  class H outcome;
