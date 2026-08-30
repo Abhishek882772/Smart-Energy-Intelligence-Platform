@@ -1,0 +1,2 @@
+# Initial ML setup uses Python's standard library only.
+# Add pinned third-party dependencies when the first preprocessing milestone begins.
