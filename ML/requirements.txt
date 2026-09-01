@@ -1,2 +1,11 @@
-# Initial ML setup uses Python's standard library only.
-# Add pinned third-party dependencies when the first preprocessing milestone begins.
+# Core ML & numerical computing
+numpy>=1.26.4,<3.0.0
+pandas>=2.2.0,<3.0.0
+matplotlib>=3.8.0,<4.0.0
+scikit-learn>=1.4.0,<2.0.0
+torch>=2.2.0
+pyyaml>=6.0.1,<7.0.0
+
+# Interactive analysis and notebook support
+jupyter>=1.0.0
+ipykernel>=6.29.0
