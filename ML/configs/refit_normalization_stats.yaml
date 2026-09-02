@@ -1,0 +1,40 @@
+# ==============================================================================
+# REFIT FULL TRAINING SPLIT NORMALIZATION PARAMETERS
+# Computed across all valid samples from the 5 training households [2, 3, 5, 7, 9]
+# ==============================================================================
+
+sample_status: full_training_split
+strategy: standardization
+clip_zscore: 10.0
+epsilon: 1.0e-06
+fitted_on_households:
+- 2
+- 3
+- 5
+- 7
+- 9
+channel_statistics:
+  aggregate:
+    mean: 573.2717
+    std: 753.7691
+    min: 0.0
+    max: 4000.0
+    sample_count: 36426081
+  refrigerator:
+    mean: 41.8432
+    std: 55.3223
+    min: 0.0
+    max: 1639.0
+    sample_count: 36426081
+  washing_machine:
+    mean: 26.2276
+    std: 210.2794
+    min: 0.0
+    max: 2567.0
+    sample_count: 36426081
+  television:
+    mean: 13.7077
+    std: 102.7278
+    min: 0.0
+    max: 2905.0
+    sample_count: 36426081

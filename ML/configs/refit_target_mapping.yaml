@@ -1,0 +1,336 @@
+# ==============================================================================
+# REFIT DATASET VERIFIED TARGET APPLIANCE MAPPING
+# Verified from Milestone 2 Data Audit & Official Nature Scientific Data Metadata
+# ==============================================================================
+
+households:
+  1:
+    filename: "CLEAN_House1.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance5"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance8"
+      name: "Television Site"
+      category: "television"
+    notes: "Washer Dryer also on Appliance4; Appliance5 is standard Washing Machine."
+
+  2:
+    filename: "CLEAN_House2.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance2"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance4"
+      name: "Television Site"
+      category: "television"
+    notes: "Primary benchmark household in NILM literature (Seq2Point / Kelly & Knottenbelt)."
+
+  3:
+    filename: "CLEAN_House3.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance2"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance5"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance8"
+      name: "Television Site"
+      category: "television"
+    notes: "Separate freezer on Appliance3; high sensor issue flags (5.8%)."
+
+  4:
+    filename: "CLEAN_House4.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance4"
+      name: "Washing Machine (1)"
+      category: "washing machine"
+    television:
+      channel: "Appliance7"
+      name: "Television Site"
+      category: "television"
+    notes: "Second fridge-freezer on Appliance3; second washing machine on Appliance5."
+
+  5:
+    filename: "CLEAN_House5.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine (1)"
+      category: "washing machine"
+    television:
+      channel: "Appliance7"
+      name: "Television Site"
+      category: "television"
+    notes: "High activation frequency for washing machine; second washer on Appliance4."
+
+  6:
+    filename: "CLEAN_House6.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Freezer"
+      category: "freezer"
+    washing_machine:
+      channel: "Appliance2"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance5"
+      name: "Television Site"
+      category: "television"
+    notes: "Appliance1 is a standalone Freezer (no dedicated primary Fridge)."
+
+  7:
+    filename: "CLEAN_House7.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance5"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance7"
+      name: "Television Site"
+      category: "television"
+    notes: "Separate freezers on Appliance2 and Appliance3."
+
+  8:
+    filename: "CLEAN_House8.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance4"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance7"
+      name: "Television Site"
+      category: "television"
+    notes: "Clean sensor profile (<0.5% issues)."
+
+  9:
+    filename: "CLEAN_House9.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance5"
+      name: "Television Site"
+      category: "television"
+    notes: "Washer dryer also on Appliance2; Appliance3 is dedicated Washing Machine."
+
+  10:
+    filename: "CLEAN_House10.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance3"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance4"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance6"
+      name: "Television Site"
+      category: "television"
+    notes: "Very high washing machine usage (31% active)."
+
+  11:
+    filename: "CLEAN_House11.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine"
+      category: "washing machine"
+    television: null
+    notes: "Television is NOT monitored in House 11."
+
+  12:
+    filename: "CLEAN_House12.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine: null
+    television:
+      channel: "Appliance2"
+      name: "Television"
+      category: "television"
+    notes: "Washing Machine is NOT monitored in House 12 (Appliance6 is unused/unmonitored)."
+
+  13:
+    filename: "CLEAN_House13.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance5"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance1"
+      name: "Television"
+      category: "television"
+    notes: "Television on Appliance1; Fridge on Appliance5."
+
+  15:
+    filename: "CLEAN_House15.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance6"
+      name: "Television"
+      category: "television"
+    notes: "Clean dataset profile (0.38% issues)."
+
+  16:
+    filename: "CLEAN_House16.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer (1)"
+      category: "fridge freezer"
+    washing_machine: null
+    television:
+      channel: "Appliance6"
+      name: "Television"
+      category: "television"
+    notes: "Washing machine IAM on Appliance3 was defective/unplugged (0.04% active samples)."
+
+  17:
+    filename: "CLEAN_House17.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Freezer"
+      category: "freezer"
+    washing_machine:
+      channel: "Appliance2"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance5"
+      name: "Television"
+      category: "television"
+    notes: "Appliance1 is a standalone Freezer."
+
+  18:
+    filename: "CLEAN_House18.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance2"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance6"
+      name: "Television"
+      category: "television"
+    notes: "High washing machine activity (33.7% active)."
+
+  19:
+    filename: "CLEAN_House19.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance2"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance3"
+      name: "Television"
+      category: "television"
+    notes: "Clean sub-metered channels."
+
+  20:
+    filename: "CLEAN_House20.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge"
+      category: "refrigerator"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance7"
+      name: "Television"
+      category: "television"
+    notes: "Primary benchmark household in literature."
+
+  21:
+    filename: "CLEAN_House21.csv"
+    aggregate_channel: "Aggregate"
+    refrigerator:
+      channel: "Appliance1"
+      name: "Fridge-Freezer"
+      category: "fridge freezer"
+    washing_machine:
+      channel: "Appliance3"
+      name: "Washing Machine"
+      category: "washing machine"
+    television:
+      channel: "Appliance6"
+      name: "Television"
+      category: "television"
+    notes: "Aggregate meter affected by rooftop Solar PV generation."

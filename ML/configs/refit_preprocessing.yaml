@@ -1,0 +1,93 @@
+# ==============================================================================
+# REFIT DATASET PREPROCESSING CONFIGURATION
+# Project: Cross-Country Generalization of NILM Models for Indian Consumption
+# Milestone: Milestone 3 — REFIT Preprocessing Pipeline
+# ==============================================================================
+
+pipeline:
+  name: "refit_nilm_preprocessing_pipeline"
+  version: "1.0.0"
+  description: "Reproducible data alignment, 6s resampling, validity masking, normalization, and window generation."
+
+# ------------------------------------------------------------------------------
+# 1. DATASET & PATHS [CONFIRMED FROM DATA]
+# ------------------------------------------------------------------------------
+data:
+  raw_dir: "ML/data/raw/REFIT"
+  processed_dir: "ML/data/processed/REFIT"
+  target_mapping_file: "ML/configs/refit_target_mapping.yaml"
+  normalization_stats_file: "ML/configs/refit_normalization_stats.yaml"
+  
+  raw_schema:
+    timestamp_col: "Time"
+    unix_col: "Unix"
+    aggregate_col: "Aggregate"
+    appliance_cols: ["Appliance1", "Appliance2", "Appliance3", "Appliance4", "Appliance5", "Appliance6", "Appliance7", "Appliance8", "Appliance9"]
+    issues_col: "Issues"
+
+# ------------------------------------------------------------------------------
+# 2. TEMPORAL GRID & RESAMPLING [PROVISIONAL DESIGN DECISION]
+# ------------------------------------------------------------------------------
+sampling:
+  target_sampling_interval_seconds: 6   # 6-second uniform grid (0.1667 Hz) - NILM literature benchmark
+  resampling_method: "mean"             # Time-weighted average power across the 6-second interval
+  max_forward_fill_seconds: 30          # Maximum gap for forward-filling sensor jitter (<= 30s)
+  long_gap_threshold_seconds: 30        # Gaps > 30s are flagged as invalid (not silently interpolated)
+
+# ------------------------------------------------------------------------------
+# 3. SENSOR ISSUES & VALIDITY POLICY [CONFIRMED FROM DATA]
+# ------------------------------------------------------------------------------
+quality_control:
+  mask_issues_flags: true               # If Issues == 1, mark sample validity = False
+  min_power_threshold_watts: 0.0        # Power cannot be negative in standard residential loads
+  max_power_cutoff_watts: 4000.0        # Rated ceiling of IAM sensor; readings >4000W clipped/flagged invalid
+  min_valid_samples_ratio: 0.90         # Minimum proportion of valid data required in a window (90%)
+
+# ------------------------------------------------------------------------------
+# 4. TARGET APPLIANCES [CONFIRMED FROM AUDIT]
+# ------------------------------------------------------------------------------
+appliances:
+  primary_targets:
+    - name: "refrigerator"
+      category_aliases: ["refrigerator", "fridge", "fridge-freezer", "fridge freezer"]
+      on_power_threshold_watts: 15.0
+      nominal_power_watts: 120.0
+    - name: "washing_machine"
+      category_aliases: ["washing machine", "washer dryer"]
+      on_power_threshold_watts: 20.0
+      nominal_power_watts: 2000.0
+  
+  exploratory_targets:
+    - name: "television"
+      category_aliases: ["television", "television site"]
+      on_power_threshold_watts: 10.0
+      nominal_power_watts: 80.0
+
+# ------------------------------------------------------------------------------
+# 5. NORMALIZATION POLICY [PROVISIONAL DESIGN DECISION]
+# ------------------------------------------------------------------------------
+normalization:
+  strategy: "standardization"           # Options: 'standardization' (z-score: (x-mu)/sigma) or 'minmax' ([0, 1])
+  fit_on_train_only: true               # STRICT: Normalization parameters fit only on training split
+  clip_zscore: 10.0                     # Outlier guard: clip normalized values to [-10, 10]
+  epsilon: 1.0e-6                       # Division by zero safeguard for std deviation
+
+# ------------------------------------------------------------------------------
+# 6. SLIDING WINDOW GENERATION [EXPERIMENTAL DECISION - PROVISIONAL]
+# ------------------------------------------------------------------------------
+windowing:
+  default_window_length: 599            # Sequence length (599 samples at 6s = approx 59.9 minutes for Seq2Point)
+  default_stride_train: 30              # Stride for training data (subsampling to manage memory & correlation)
+  default_stride_eval: 1                # Stride for validation/test evaluation (dense prediction)
+  target_format: "midpoint"             # Options: 'midpoint' (Seq2Point single-value) or 'sequence' (Seq2Seq / TCN)
+  require_valid_mask: true              # Ensure window validity ratio >= quality_control.min_valid_samples_ratio
+
+# ------------------------------------------------------------------------------
+# 7. HOUSEHOLD-LEVEL PARTITIONING [PROVISIONAL BENCHMARK SPLIT]
+# ------------------------------------------------------------------------------
+splits:
+  provisional_train: [2, 3, 5, 7, 9]     # 5 households: High activation density, diverse operational patterns
+  provisional_val:   [1, 8, 15]          # 3 households: In-domain checkpoint selection & early stopping
+  provisional_test:  [6, 10, 11, 20]     # 4 households: In-domain UK benchmark evaluation
+  provisional_domain_shift: [21]         # 1 household: Solar PV net-metering distortion study
+  provisional_auxiliary: [4, 12, 13, 16, 17, 18, 19] # 7 households: Multi-house pretraining / auxiliary pool

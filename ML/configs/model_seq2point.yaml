@@ -1,0 +1,37 @@
+# ==============================================================================
+# UNIFIED MULTI-OUTPUT SEQ2POINT MODEL CONFIGURATION
+# Canonical Seq2Point (Zhang et al. 2018) adapted for multi-appliance NILM
+# ==============================================================================
+
+model:
+  name: "MultiOutputSeq2Point"
+  version: "1.0.0"
+  description: "Unified multi-output 1D CNN baseline with shared feature extractor and 3 appliance heads."
+
+architecture:
+  window_length: 599             # 599 samples @ 6s = approx 59.9 minutes
+  input_channels: 1              # 1D aggregate power sequence
+  conv_channels: [30, 30, 40, 50, 50]
+  kernel_sizes: [10, 8, 6, 5, 5]
+  strides: [1, 1, 1, 1, 1]
+  paddings: ["same", "same", "same", "same", "same"]
+  activation: "relu"
+  flatten_dim: 29950             # 50 channels * 599 length
+  dense_units: 1024
+  dropout_rate: 0.2
+  num_outputs: 3
+  target_names:
+    - "refrigerator"
+    - "washing_machine"
+    - "television"
+
+loss:
+  name: "MaskedMultiTaskLoss"
+  reduction: "mean"
+  eps: 1.0e-8
+
+training_defaults:
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 1.0e-5
+  optimizer: "adam"
