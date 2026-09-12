@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
+from .device import get_device
 from .metrics import evaluate_appliance_metrics
 
 
@@ -18,7 +19,7 @@ class Evaluator:
         normalization_stats: Dict[str, Dict[str, float]],
         target_names: Optional[List[str]] = None,
         thresholds: Optional[Dict[str, float]] = None,
-        device: Union[str, torch.device] = "cpu",
+        device: Optional[Union[str, torch.device]] = None,
     ):
         """Initialize Evaluator.
 
@@ -27,7 +28,7 @@ class Evaluator:
             normalization_stats: Dict mapping channel name -> {mean, std}.
             target_names: Ordered list of target appliance names.
             thresholds: Dict mapping appliance name -> activation threshold in Watts.
-            device: Target execution device ('cpu' or 'cuda').
+            device: Target execution device ('cpu' or 'cuda', default: auto-resolved).
         """
         self.criterion = criterion
         self.norm_stats = normalization_stats
@@ -37,7 +38,7 @@ class Evaluator:
             "washing_machine": 20.0,
             "television": 10.0,
         }
-        self.device = torch.device(device)
+        self.device = get_device(device)
 
     def to_watts(self, arr_norm: np.ndarray, channel_name: str) -> np.ndarray:
         """Inverse-transform normalized z-scores to physical power in Watts with non-negative clamp."""
@@ -66,6 +67,8 @@ class Evaluator:
         all_masks = []
         all_house_ids = []
 
+        non_blocking = (self.device.type == "cuda")
+
         with torch.no_grad():
             for batch in data_loader:
                 if len(batch) == 4:
@@ -74,9 +77,9 @@ class Evaluator:
                     batch_X, batch_y, batch_mask = batch
                     batch_h = torch.zeros(len(batch_X), dtype=torch.int64)
 
-                batch_X = batch_X.to(self.device)
-                batch_y = batch_y.to(self.device)
-                batch_mask = batch_mask.to(self.device)
+                batch_X = batch_X.to(self.device, non_blocking=non_blocking)
+                batch_y = batch_y.to(self.device, non_blocking=non_blocking)
+                batch_mask = batch_mask.to(self.device, non_blocking=non_blocking)
 
                 preds = model(batch_X)
                 loss, components = self.criterion(preds, batch_y, batch_mask, return_components=True)

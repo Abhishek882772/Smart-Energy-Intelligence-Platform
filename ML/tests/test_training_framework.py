@@ -21,12 +21,39 @@ from ML.src.training.metrics import (
     compute_classification_metrics,
     evaluate_appliance_metrics,
 )
+from ML.src.training.device import (
+    get_device,
+    get_dataloader_kwargs,
+    log_environment_info,
+)
 from ML.src.training.history import TrainingHistory
 from ML.src.training.checkpoint import CheckpointManager
 from ML.src.training.evaluator import Evaluator
 from ML.src.training.trainer import Trainer
 from ML.src.losses.masked_multitask_loss import MaskedMultiTaskLoss
 from ML.src.models.seq2point import MultiOutputSeq2Point
+
+
+def test_device_utilities():
+    """Verify device resolution, environment logging, and DataLoader argument generation."""
+    # Explicit CPU
+    dev_cpu = get_device("cpu")
+    assert dev_cpu.type == "cpu"
+    kwargs_cpu = get_dataloader_kwargs(device="cpu")
+    assert kwargs_cpu["pin_memory"] is False
+    assert kwargs_cpu["num_workers"] == 0
+
+    # Auto-resolve
+    dev_auto = get_device(None)
+    assert dev_auto.type in ["cpu", "cuda"]
+
+    # Environment logging dict structure
+    info = log_environment_info(dev_cpu)
+    assert "selected_device" in info
+    assert "cuda_available" in info
+    assert "pytorch_version" in info
+
+    print("[PASS] Device resolution and DataLoader utilities verified.")
 
 
 def test_metrics_computations():
@@ -77,7 +104,7 @@ def test_training_modules_flow():
         history = TrainingHistory(tmp_path)
         ckpt_mgr = CheckpointManager(tmp_path, monitor="val_loss", mode="min")
 
-        # Fake normalization stats
+        # Normalization stats
         norm_stats = {
             "refrigerator": {"mean": 40.0, "std": 50.0},
             "washing_machine": {"mean": 25.0, "std": 200.0},
@@ -85,7 +112,7 @@ def test_training_modules_flow():
         }
 
         criterion = MaskedMultiTaskLoss()
-        evaluator = Evaluator(criterion, normalization_stats=norm_stats)
+        evaluator = Evaluator(criterion, normalization_stats=norm_stats, device="cpu")
 
         # Synthetic tensors
         torch.manual_seed(42)
@@ -112,18 +139,30 @@ def test_training_modules_flow():
             evaluator=evaluator,
             checkpoint_manager=ckpt_mgr,
             history=history,
+            device="cpu",
             early_stopping_patience=2,
         )
 
         res = trainer.fit(max_epochs=2)
         assert res["best_epoch"] in [1, 2]
-        assert (tmp_path / "best_model.pt").exists()
+        best_ckpt_file = tmp_path / "best_model.pt"
+        assert best_ckpt_file.exists()
         assert (tmp_path / "training_history.csv").exists()
 
-        print("[PASS] Full training loop, evaluator, history, and checkpoint manager verified.")
+        # Test CheckpointManager loading with device specification
+        model_restored = MultiOutputSeq2Point(window_length=599, input_channels=1, num_outputs=3)
+        opt_restored = torch.optim.Adam(model_restored.parameters(), lr=0.001)
+        ckpt_mgr.load(best_ckpt_file, model=model_restored, optimizer=opt_restored, device="cpu")
+
+        # Verify weights match
+        for p1, p2 in zip(model.parameters(), model_restored.parameters()):
+            assert torch.equal(p1.cpu(), p2.cpu())
+
+        print("[PASS] Full training loop, evaluator, history, and device-safe checkpoint manager verified.")
 
 
 if __name__ == "__main__":
+    test_device_utilities()
     test_metrics_computations()
     test_training_modules_flow()
     print("\nALL TRAINING FRAMEWORK UNIT TESTS PASSED!")

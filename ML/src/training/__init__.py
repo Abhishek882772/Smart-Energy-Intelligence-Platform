@@ -8,6 +8,11 @@ from .metrics import (
     compute_classification_metrics,
     evaluate_appliance_metrics,
 )
+from .device import (
+    get_device,
+    get_dataloader_kwargs,
+    log_environment_info,
+)
 from .history import TrainingHistory
 from .checkpoint import CheckpointManager
 from .evaluator import Evaluator
@@ -20,6 +25,9 @@ __all__ = [
     "compute_sae",
     "compute_classification_metrics",
     "evaluate_appliance_metrics",
+    "get_device",
+    "get_dataloader_kwargs",
+    "log_environment_info",
     "TrainingHistory",
     "CheckpointManager",
     "Evaluator",

@@ -92,17 +92,41 @@ class CheckpointManager:
         model: nn.Module,
         optimizer: Optional[Optimizer] = None,
         scheduler: Optional[Any] = None,
+        device: Optional[Union[str, torch.device]] = None,
     ) -> Dict[str, Any]:
-        """Load state dictionary into model, optimizer, and scheduler."""
+        """Load state dictionary into model, optimizer, and scheduler.
+
+        Args:
+            checkpoint_path: Path to .pt checkpoint file.
+            model: Model whose weights should be restored.
+            optimizer: Optional optimizer whose state should be restored.
+            scheduler: Optional LR scheduler whose state should be restored.
+            device: Target device for loading weights and optimizer states (default: None, inferred from model or 'cpu').
+
+        Returns:
+            checkpoint: Loaded checkpoint dictionary.
+        """
         p = Path(checkpoint_path)
         if not p.exists():
             raise FileNotFoundError(f"Checkpoint not found at {p.resolve()}")
 
-        checkpoint = torch.load(p, map_location="cpu")
+        target_device = (
+            device
+            if device is not None
+            else (next(model.parameters()).device if list(model.parameters()) else "cpu")
+        )
+
+        checkpoint = torch.load(p, map_location=target_device)
         model.load_state_dict(checkpoint["model_state_dict"])
 
         if optimizer is not None and "optimizer_state_dict" in checkpoint:
             optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+            # Ensure all optimizer state tensors reside on target_device
+            target_torch_device = torch.device(target_device)
+            for state in optimizer.state.values():
+                for k, v in state.items():
+                    if isinstance(v, torch.Tensor):
+                        state[k] = v.to(target_torch_device)
 
         if scheduler is not None and checkpoint.get("scheduler_state_dict") is not None:
             scheduler.load_state_dict(checkpoint["scheduler_state_dict"])

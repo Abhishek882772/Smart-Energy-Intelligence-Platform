@@ -8,6 +8,7 @@ from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 
 from .checkpoint import CheckpointManager
+from .device import get_device, log_environment_info
 from .evaluator import Evaluator
 from .history import TrainingHistory
 
@@ -26,7 +27,7 @@ class Trainer:
         checkpoint_manager: CheckpointManager,
         history: TrainingHistory,
         scheduler: Optional[Any] = None,
-        device: Union[str, torch.device] = "cpu",
+        device: Optional[Union[str, torch.device]] = None,
         grad_clip_norm: Optional[float] = 5.0,
         early_stopping_patience: int = 5,
     ):
@@ -42,10 +43,11 @@ class Trainer:
             checkpoint_manager: CheckpointManager instance.
             history: TrainingHistory instance.
             scheduler: Optional learning rate scheduler.
-            device: Computation device.
+            device: Computation device ('cpu', 'cuda', or None for auto-detection).
             grad_clip_norm: Maximum gradient norm for clipping.
             early_stopping_patience: Epochs without validation loss improvement before stopping.
         """
+        self.device = get_device(device)
         self.model = model
         self.optimizer = optimizer
         self.criterion = criterion
@@ -55,7 +57,6 @@ class Trainer:
         self.checkpoint_manager = checkpoint_manager
         self.history = history
         self.scheduler = scheduler
-        self.device = torch.device(device)
         self.grad_clip_norm = grad_clip_norm
         self.patience = early_stopping_patience
 
@@ -67,7 +68,8 @@ class Trainer:
         total_loss = 0.0
         total_samples = 0
         app_losses = {name: 0.0 for name in self.evaluator.target_names}
-        
+        non_blocking = (self.device.type == "cuda")
+
         t0 = time.time()
         for batch in self.train_loader:
             if len(batch) == 4:
@@ -75,9 +77,9 @@ class Trainer:
             else:
                 batch_X, batch_y, batch_mask = batch
 
-            batch_X = batch_X.to(self.device)
-            batch_y = batch_y.to(self.device)
-            batch_mask = batch_mask.to(self.device)
+            batch_X = batch_X.to(self.device, non_blocking=non_blocking)
+            batch_y = batch_y.to(self.device, non_blocking=non_blocking)
+            batch_mask = batch_mask.to(self.device, non_blocking=non_blocking)
 
             self.optimizer.zero_grad()
             preds = self.model(batch_X)
@@ -114,8 +116,10 @@ class Trainer:
 
     def fit(self, max_epochs: int = 20, start_epoch: int = 1) -> Dict[str, Any]:
         """Execute full training and validation loop with early stopping."""
+        log_environment_info(self.device)
+
         print("=" * 80)
-        print(f"STARTING FULL TRAINING RUN ({max_epochs} Epochs Max | Device: {self.device})")
+        print(f"STARTING FULL TRAINING RUN ({max_epochs} Epochs Max | Target Device: {self.device})")
         print("=" * 80)
 
         epochs_no_improve = 0
