@@ -6,15 +6,20 @@ import sys
 import time
 from pathlib import Path
 from typing import Any, Dict, List
+import numpy as np
 import yaml
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-# Ensure repo root is on sys.path
-repo_root = Path(__file__).resolve().parent.parent.parent
+# Resolve repository root (4 levels up from ML/src/training/train.py)
+repo_root = Path(__file__).resolve().parents[3]
 if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
+
+cwd_path = Path.cwd().resolve()
+if str(cwd_path) not in sys.path:
+    sys.path.insert(0, str(cwd_path))
 
 from ML.src.models.seq2point import MultiOutputSeq2Point
 from ML.src.models.dataset import REFITShardDataset
@@ -87,6 +92,12 @@ def parse_args():
         help="Early stopping patience in epochs (default: 3)",
     )
     parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Deterministic random seed (default: 42)",
+    )
+    parser.add_argument(
         "--device",
         type=str,
         default=None,
@@ -97,11 +108,17 @@ def parse_args():
 
 def run_training(args):
     """Execute authoritative M4.5 training and evaluation pipeline."""
-    # 1. Device and Environment Diagnostics
+    # 1. Deterministic Seeding
+    torch.manual_seed(args.seed)
+    np.random.seed(args.seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(args.seed)
+
+    # 2. Device and Environment Diagnostics
     device = get_device(args.device)
     env_info = log_environment_info(device)
 
-    # 2. Paths
+    # 3. Paths
     cfg_path = repo_root / args.config
     stats_path = repo_root / args.stats
     data_dir = repo_root / args.data_dir
@@ -111,7 +128,7 @@ def run_training(args):
     with open(stats_path, "r", encoding="utf-8") as f:
         norm_stats = yaml.safe_load(f)["channel_statistics"]
 
-    # 3. Training and Validation Shard Paths
+    # 4. Training and Validation Shard Paths
     train_houses = [2, 3, 5, 7, 9]
     val_houses = [1, 8, 15]
     test_houses = [6, 10, 11, 20]
@@ -133,7 +150,7 @@ def run_training(args):
     train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, **loader_kwargs)
     val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, **loader_kwargs)
 
-    # 4. Model, Criterion, Optimizer, Scheduler
+    # 5. Model, Criterion, Optimizer, Scheduler
     model = MultiOutputSeq2Point.from_config(cfg_path)
     criterion = MaskedMultiTaskLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
@@ -141,7 +158,7 @@ def run_training(args):
         optimizer, mode="min", factor=0.5, patience=1, min_lr=1e-6
     )
 
-    # 5. Checkpoint Manager & History Logger
+    # 6. Checkpoint Manager & History Logger
     ckpt_mgr = CheckpointManager(exp_dir, monitor="val_loss", mode="min")
     history = TrainingHistory(exp_dir)
     evaluator = Evaluator(criterion, normalization_stats=norm_stats, device=device)
@@ -152,7 +169,7 @@ def run_training(args):
         "experiment_name": exp_dir.name,
         "model": "MultiOutputSeq2Point",
         "parameters": model.get_parameter_count()["total_trainable"],
-        "seed": 42,
+        "seed": args.seed,
         "batch_size": args.batch_size,
         "learning_rate": args.lr,
         "weight_decay": args.weight_decay,
@@ -170,7 +187,7 @@ def run_training(args):
     with open(exp_dir / "config_snapshot.yaml", "w", encoding="utf-8") as f:
         yaml.dump(config_snapshot, f, sort_keys=False)
 
-    # 6. Execute Training
+    # 7. Execute Training
     trainer = Trainer(
         model=model,
         optimizer=optimizer,
@@ -193,7 +210,7 @@ def run_training(args):
     print(f"\nTraining completed in {total_train_time / 60:.2f} minutes.")
     print(f"Best Validation Loss: {fit_summary['best_val_loss']:.6f} at Epoch {fit_summary['best_epoch']}.")
 
-    # 7. Evaluate Best Checkpoint on Test and Domain-Shift Partitions
+    # 8. Evaluate Best Checkpoint on Test and Domain-Shift Partitions
     best_ckpt_path = exp_dir / "best_model.pt"
     if best_ckpt_path.exists():
         print("\nLoading Best Checkpoint for Final Test Evaluation...")
