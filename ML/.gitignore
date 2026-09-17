@@ -5,20 +5,32 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 
-# Research data and generated artifacts
+# Large compressed archives
+*.zip
+*.7z
+*.tar.gz
+
+# Raw research data and binary processed shards
 data/raw/*
+!data/raw/.gitkeep
+
 data/processed/*
-results/*
+!data/processed/.gitkeep
+!data/processed/REFIT/
+data/processed/REFIT/*
+!data/processed/REFIT/dataset_manifest.json
+
+# Model checkpoints and large weight binaries
 checkpoints/*
-*.csv
-*.parquet
-*.h5
-*.keras
+!checkpoints/.gitkeep
 *.pt
 *.pth
+*.h5
+*.keras
 
-# Keep directory documentation/placeholders tracked
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# Experiment outputs
+results/experiments/*
 !results/.gitkeep
-!checkpoints/.gitkeep
+!results/*.md
+!results/*.csv
+!results/figures/*

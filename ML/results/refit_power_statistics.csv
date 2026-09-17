@@ -1,0 +1,79 @@
+household,filename,signal_type,mapped_channel,appliance_label,mean_w,median_w,std_w,min_w,max_w,p25_w,p75_w,p95_w,p99_w
+1,CLEAN_House1.csv,Aggregate,Aggregate,Whole-House Aggregate,481.14,242.0,812.89,0.0,29159.0,185.0,427.0,1376.0,3551.0
+1,CLEAN_House1.csv,Refrigerator,Appliance1,Fridge,17.54,0.0,43.09,0.0,3584.0,0.0,0.0,81.0,85.0
+1,CLEAN_House1.csv,Washing_Machine,Appliance4,Washer Dryer,1.84,0.0,56.11,0.0,3584.0,0.0,0.0,0.0,0.0
+1,CLEAN_House1.csv,Television,Appliance8,Television Site,5.8,0.0,13.17,0.0,3584.0,0.0,0.0,33.0,41.0
+2,CLEAN_House2.csv,Aggregate,Aggregate,Whole-House Aggregate,465.1,169.0,1062.58,0.0,24595.0,108.0,331.0,2430.0,4278.3
+2,CLEAN_House2.csv,Refrigerator,Appliance1,Fridge-Freezer,35.77,1.0,45.65,0.0,1690.0,1.0,84.0,90.0,161.0
+2,CLEAN_House2.csv,Washing_Machine,Appliance2,Washing Machine,18.27,0.0,174.3,0.0,3584.0,0.0,0.0,5.0,225.0
+2,CLEAN_House2.csv,Television,Appliance4,Television Site,3.97,0.0,13.39,0.0,3584.0,0.0,0.0,43.0,49.0
+3,CLEAN_House3.csv,Aggregate,Aggregate,Whole-House Aggregate,678.46,368.0,1013.23,0.0,65836.0,223.0,613.0,2684.0,4502.55
+3,CLEAN_House3.csv,Refrigerator,Appliance2,Fridge-Freezer,53.16,81.0,60.23,0.0,3584.0,0.0,94.0,112.0,242.0
+3,CLEAN_House3.csv,Washing_Machine,Appliance5,Washing Machine,49.07,0.0,310.89,0.0,3840.0,0.0,0.0,1.0,2124.2
+3,CLEAN_House3.csv,Television,Appliance8,Television Site,2.72,0.0,59.58,0.0,2848.0,0.0,0.0,0.0,0.0
+4,CLEAN_House4.csv,Aggregate,Aggregate,Whole-House Aggregate,381.22,297.0,428.32,0.0,65663.0,195.0,473.0,768.0,2551.95
+4,CLEAN_House4.csv,Refrigerator,Appliance1,Fridge,9.83,0.0,24.98,0.0,3968.0,0.0,0.0,53.0,54.0
+4,CLEAN_House4.csv,Washing_Machine,Appliance4,Washing Machine (1),4.21,0.0,96.12,0.0,3100.0,0.0,0.0,4.0,4.0
+4,CLEAN_House4.csv,Television,Appliance7,Television Site,23.24,0.0,33.56,0.0,2548.0,0.0,62.0,85.0,96.0
+5,CLEAN_House5.csv,Aggregate,Aggregate,Whole-House Aggregate,738.15,461.0,808.24,0.0,41738.0,322.0,752.0,2351.0,4155.0
+5,CLEAN_House5.csv,Refrigerator,Appliance1,Fridge-Freezer,59.96,97.0,69.86,0.0,2807.0,2.0,103.0,121.0,382.0
+5,CLEAN_House5.csv,Washing_Machine,Appliance3,Washing Machine (1),31.36,0.0,209.27,0.0,2437.0,0.0,3.0,73.0,520.0
+5,CLEAN_House5.csv,Television,Appliance7,Television Site,27.37,0.0,223.88,0.0,2919.0,0.0,0.0,20.0,1417.86
+6,CLEAN_House6.csv,Aggregate,Aggregate,Whole-House Aggregate,482.89,366.0,467.21,0.0,32756.0,257.0,551.0,861.0,3141.43
+6,CLEAN_House6.csv,Refrigerator,Appliance1,Freezer,20.03,0.0,35.74,0.0,3640.0,0.0,55.0,60.0,62.0
+6,CLEAN_House6.csv,Washing_Machine,Appliance2,Washing Machine,7.12,0.0,104.44,0.0,3968.0,0.0,0.0,0.0,131.81
+6,CLEAN_House6.csv,Television,Appliance5,Television Site,38.38,14.0,47.27,0.0,3806.0,13.0,23.0,128.0,129.0
+7,CLEAN_House7.csv,Aggregate,Aggregate,Whole-House Aggregate,565.88,222.0,843.32,0.0,32730.0,165.0,528.0,2591.0,4035.8
+7,CLEAN_House7.csv,Refrigerator,Appliance1,Fridge,15.64,0.0,32.71,0.0,2948.0,0.0,0.0,80.0,83.0
+7,CLEAN_House7.csv,Washing_Machine,Appliance5,Washing Machine,38.15,0.0,248.6,0.0,3584.0,0.0,0.0,108.0,1984.0
+7,CLEAN_House7.csv,Television,Appliance7,Television Site,11.09,0.0,19.07,0.0,2560.0,0.0,11.0,50.0,51.0
+8,CLEAN_House8.csv,Aggregate,Aggregate,Whole-House Aggregate,685.62,254.0,1163.25,0.0,25358.0,202.0,714.0,3226.0,4469.32
+8,CLEAN_House8.csv,Refrigerator,Appliance1,Fridge,8.84,0.0,29.31,0.0,3584.0,0.0,0.0,46.0,52.0
+8,CLEAN_House8.csv,Washing_Machine,Appliance4,Washing Machine,29.43,0.0,244.18,0.0,3972.0,0.0,0.0,2.0,2148.0
+8,CLEAN_House8.csv,Television,Appliance7,Television Site,25.37,5.0,48.36,0.0,2730.0,5.0,6.0,146.0,158.0
+9,CLEAN_House9.csv,Aggregate,Aggregate,Whole-House Aggregate,576.05,208.0,982.14,0.0,28836.0,171.0,512.0,2559.25,4954.1
+9,CLEAN_House9.csv,Refrigerator,Appliance1,Fridge-Freezer,46.69,25.0,62.96,0.0,3106.0,0.0,75.0,222.0,226.0
+9,CLEAN_House9.csv,Washing_Machine,Appliance2,Washer Dryer,37.83,0.0,249.88,0.0,3584.0,0.0,0.0,0.0,1457.0
+9,CLEAN_House9.csv,Television,Appliance5,Television Site,26.39,12.0,37.67,0.0,2993.0,11.0,12.0,112.0,122.0
+10,CLEAN_House10.csv,Aggregate,Aggregate,Whole-House Aggregate,776.16,432.0,871.56,0.0,37031.0,267.0,808.0,2540.0,4087.24
+10,CLEAN_House10.csv,Refrigerator,Appliance3,Fridge-Freezer,43.11,66.0,38.07,0.0,2116.0,0.0,70.0,79.0,85.0
+10,CLEAN_House10.csv,Washing_Machine,Appliance4,Washing Machine,23.52,0.0,41.71,0.0,2159.0,0.0,34.0,103.0,126.0
+10,CLEAN_House10.csv,Television,Appliance6,Television Site,147.99,1.0,478.26,0.0,3585.0,0.0,2.0,1717.0,1815.0
+11,CLEAN_House11.csv,Aggregate,Aggregate,Whole-House Aggregate,461.23,184.0,614.41,0.0,32932.0,116.0,528.0,2074.25,2669.7
+11,CLEAN_House11.csv,Refrigerator,Appliance1,Fridge,8.69,0.0,68.84,0.0,2885.0,0.0,0.0,36.0,38.0
+11,CLEAN_House11.csv,Washing_Machine,Appliance3,Washing Machine,6.39,0.0,109.64,0.0,2489.0,0.0,0.0,2.0,55.0
+12,CLEAN_House12.csv,Aggregate,Aggregate,Whole-House Aggregate,367.21,167.0,618.05,0.0,16543.0,150.0,299.0,2230.5,3068.1
+12,CLEAN_House12.csv,Refrigerator,Appliance1,Fridge-Freezer,29.9,0.0,45.85,0.0,3968.0,0.0,86.0,100.0,109.0
+12,CLEAN_House12.csv,Television,Appliance2,Television,41.84,5.0,69.57,0.0,3600.0,5.0,20.0,200.0,215.0
+13,CLEAN_House13.csv,Aggregate,Aggregate,Whole-House Aggregate,557.77,321.0,796.27,0.0,25140.0,218.0,487.0,2399.0,3844.08
+13,CLEAN_House13.csv,Refrigerator,Appliance5,Fridge,68.69,1.0,365.37,0.0,2960.0,0.0,12.0,142.0,2687.0
+13,CLEAN_House13.csv,Washing_Machine,Appliance3,Washing Machine,21.77,0.0,191.27,0.0,3074.0,0.0,0.0,4.0,297.27
+13,CLEAN_House13.csv,Television,Appliance1,Television,6.06,0.0,33.81,0.0,2688.0,0.0,0.0,5.0,206.0
+15,CLEAN_House15.csv,Aggregate,Aggregate,Whole-House Aggregate,254.83,179.0,350.9,0.0,8840.0,159.0,240.0,435.0,2556.88
+15,CLEAN_House15.csv,Refrigerator,Appliance1,Fridge-Freezer,24.41,0.0,38.89,0.0,2048.0,0.0,73.0,82.0,89.0
+15,CLEAN_House15.csv,Washing_Machine,Appliance3,Washing Machine,17.35,0.0,174.82,0.0,3336.0,0.0,0.0,0.0,273.0
+15,CLEAN_House15.csv,Television,Appliance6,Television,17.7,0.0,30.74,0.0,2118.0,0.0,68.0,70.0,71.0
+16,CLEAN_House16.csv,Aggregate,Aggregate,Whole-House Aggregate,555.73,349.0,677.8,0.0,68093.0,256.0,541.0,2316.0,3351.0
+16,CLEAN_House16.csv,Refrigerator,Appliance1,Fridge-Freezer (1),44.58,6.0,50.04,0.0,2054.0,0.0,98.0,105.0,119.0
+16,CLEAN_House16.csv,Washing_Machine,Appliance3,Washing Machine,0.25,0.0,13.94,0.0,3552.0,0.0,0.0,0.0,0.0
+16,CLEAN_House16.csv,Television,Appliance6,Television,26.76,0.0,237.86,0.0,3328.0,0.0,0.0,1.0,2148.0
+17,CLEAN_House17.csv,Aggregate,Aggregate,Whole-House Aggregate,405.75,232.0,784.4,0.0,68232.0,137.0,323.0,2151.0,3135.7
+17,CLEAN_House17.csv,Refrigerator,Appliance1,Freezer,57.24,0.0,71.93,0.0,2190.0,0.0,142.0,158.0,166.0
+17,CLEAN_House17.csv,Washing_Machine,Appliance2,Washing Machine,28.81,0.0,43.18,0.0,2130.0,0.0,76.0,85.0,97.0
+17,CLEAN_House17.csv,Television,Appliance5,Television,20.25,4.0,37.7,0.0,3178.0,4.0,29.0,84.0,119.0
+18,CLEAN_House18.csv,Aggregate,Aggregate,Whole-House Aggregate,449.6,357.0,501.74,0.0,29008.0,225.0,516.0,900.0,3282.92
+18,CLEAN_House18.csv,Refrigerator,Appliance1,Fridge-Freezer,19.03,0.0,48.27,0.0,2159.0,0.0,0.0,118.0,138.0
+18,CLEAN_House18.csv,Washing_Machine,Appliance2,Washing Machine,56.74,0.0,85.5,0.0,2560.0,0.0,164.0,176.0,198.0
+18,CLEAN_House18.csv,Television,Appliance6,Television,23.08,0.0,244.0,0.0,3488.0,0.0,0.0,0.0,159.0
+19,CLEAN_House19.csv,Aggregate,Aggregate,Whole-House Aggregate,291.31,187.0,380.58,0.0,8856.0,157.0,277.0,639.0,2395.0
+19,CLEAN_House19.csv,Refrigerator,Appliance1,Fridge-Freezer,50.24,68.0,57.29,0.0,3840.0,0.0,87.0,163.0,181.0
+19,CLEAN_House19.csv,Washing_Machine,Appliance2,Washing Machine,6.38,0.0,75.04,0.0,3072.0,0.0,0.0,1.0,162.0
+19,CLEAN_House19.csv,Television,Appliance3,Television,14.14,7.0,18.43,0.0,3847.0,7.0,7.0,62.0,76.0
+20,CLEAN_House20.csv,Aggregate,Aggregate,Whole-House Aggregate,378.0,263.0,469.71,0.0,32889.0,204.0,404.0,708.0,2784.28
+20,CLEAN_House20.csv,Refrigerator,Appliance1,Fridge,35.72,0.0,45.09,0.0,2129.0,0.0,84.0,93.0,97.0
+20,CLEAN_House20.csv,Washing_Machine,Appliance3,Washing Machine,19.42,0.0,168.96,0.0,3623.0,0.0,0.0,0.0,1514.0
+20,CLEAN_House20.csv,Television,Appliance7,Television,15.13,4.0,24.35,0.0,3850.0,4.0,11.0,76.0,91.0
+21,CLEAN_House21.csv,Aggregate,Aggregate,Whole-House Aggregate,646.84,272.0,727.86,0.0,65793.0,174.0,904.0,2057.05,3012.0
+21,CLEAN_House21.csv,Refrigerator,Appliance1,Fridge-Freezer,45.32,1.0,50.02,0.0,3969.0,1.0,92.0,97.0,196.0
+21,CLEAN_House21.csv,Washing_Machine,Appliance3,Washing Machine,14.71,0.0,161.68,0.0,3968.0,0.0,0.0,0.0,163.22
+21,CLEAN_House21.csv,Television,Appliance6,Television,6.61,0.0,19.21,0.0,2946.0,0.0,0.0,41.0,49.0

@@ -1,0 +1,347 @@
+{
+  "metadata": {
+    "created_at": "2026-09-02 01:01:54",
+    "window_length": 599,
+    "stride": 30,
+    "sampling_rate_seconds": 6,
+    "normalization_provenance": "Fitted strictly on training houses [2, 3, 5, 7, 9] (36.4M valid samples)",
+    "target_names": [
+      "refrigerator",
+      "washing_machine",
+      "television"
+    ]
+  },
+  "partitions": {
+    "train": {
+      "households": [
+        2,
+        3,
+        5,
+        7,
+        9
+      ],
+      "num_households": 5,
+      "total_windows": 1144163,
+      "shards": [
+        {
+          "household_id": 2,
+          "shard_file": "ML\\data\\processed\\REFIT\\train\\house_2.npz",
+          "aligned_rows_6s": 8890777,
+          "total_windows": 217497,
+          "theoretical_windows": 296340,
+          "rejection_rate_pct": 26.61,
+          "file_size_bytes": 11800279,
+          "valid_refrigerator_windows": 216673,
+          "valid_washing_machine_windows": 216673,
+          "valid_television_windows": 216673,
+          "X_shape": [
+            217497,
+            599,
+            1
+          ],
+          "y_shape": [
+            217497,
+            3
+          ],
+          "elapsed_seconds": 144.42
+        },
+        {
+          "household_id": 3,
+          "shard_file": "ML\\data\\processed\\REFIT\\train\\house_3.npz",
+          "aligned_rows_6s": 8850947,
+          "total_windows": 229612,
+          "theoretical_windows": 295012,
+          "rejection_rate_pct": 22.17,
+          "file_size_bytes": 12263848,
+          "valid_refrigerator_windows": 228170,
+          "valid_washing_machine_windows": 228170,
+          "valid_television_windows": 228170,
+          "X_shape": [
+            229612,
+            599,
+            1
+          ],
+          "y_shape": [
+            229612,
+            3
+          ],
+          "elapsed_seconds": 180.24
+        },
+        {
+          "household_id": 5,
+          "shard_file": "ML\\data\\processed\\REFIT\\train\\house_5.npz",
+          "aligned_rows_6s": 9335929,
+          "total_windows": 232020,
+          "theoretical_windows": 311178,
+          "rejection_rate_pct": 25.44,
+          "file_size_bytes": 16635056,
+          "valid_refrigerator_windows": 230233,
+          "valid_washing_machine_windows": 230233,
+          "valid_television_windows": 230233,
+          "X_shape": [
+            232020,
+            599,
+            1
+          ],
+          "y_shape": [
+            232020,
+            3
+          ],
+          "elapsed_seconds": 186.29
+        },
+        {
+          "household_id": 7,
+          "shard_file": "ML\\data\\processed\\REFIT\\train\\house_7.npz",
+          "aligned_rows_6s": 8829697,
+          "total_windows": 238743,
+          "theoretical_windows": 294304,
+          "rejection_rate_pct": 18.88,
+          "file_size_bytes": 14839588,
+          "valid_refrigerator_windows": 237607,
+          "valid_washing_machine_windows": 237607,
+          "valid_television_windows": 237607,
+          "X_shape": [
+            238743,
+            599,
+            1
+          ],
+          "y_shape": [
+            238743,
+            3
+          ],
+          "elapsed_seconds": 182.49
+        },
+        {
+          "household_id": 9,
+          "shard_file": "ML\\data\\processed\\REFIT\\train\\house_9.npz",
+          "aligned_rows_6s": 8180066,
+          "total_windows": 226291,
+          "theoretical_windows": 272649,
+          "rejection_rate_pct": 17.0,
+          "file_size_bytes": 12216344,
+          "valid_refrigerator_windows": 225450,
+          "valid_washing_machine_windows": 225450,
+          "valid_television_windows": 225450,
+          "X_shape": [
+            226291,
+            599,
+            1
+          ],
+          "y_shape": [
+            226291,
+            3
+          ],
+          "elapsed_seconds": 153.73
+        }
+      ]
+    },
+    "validation": {
+      "households": [
+        1,
+        8,
+        15
+      ],
+      "num_households": 3,
+      "total_windows": 722272,
+      "shards": [
+        {
+          "household_id": 1,
+          "shard_file": "ML\\data\\processed\\REFIT\\validation\\house_1.npz",
+          "aligned_rows_6s": 9200904,
+          "total_windows": 256285,
+          "theoretical_windows": 306677,
+          "rejection_rate_pct": 16.43,
+          "file_size_bytes": 14861835,
+          "valid_refrigerator_windows": 255399,
+          "valid_washing_machine_windows": 255399,
+          "valid_television_windows": 255399,
+          "X_shape": [
+            256285,
+            599,
+            1
+          ],
+          "y_shape": [
+            256285,
+            3
+          ],
+          "elapsed_seconds": 144.18
+        },
+        {
+          "household_id": 8,
+          "shard_file": "ML\\data\\processed\\REFIT\\validation\\house_8.npz",
+          "aligned_rows_6s": 7992829,
+          "total_windows": 235629,
+          "theoretical_windows": 266408,
+          "rejection_rate_pct": 11.55,
+          "file_size_bytes": 12164476,
+          "valid_refrigerator_windows": 234730,
+          "valid_washing_machine_windows": 234730,
+          "valid_television_windows": 234730,
+          "X_shape": [
+            235629,
+            599,
+            1
+          ],
+          "y_shape": [
+            235629,
+            3
+          ],
+          "elapsed_seconds": 158.96
+        },
+        {
+          "household_id": 15,
+          "shard_file": "ML\\data\\processed\\REFIT\\validation\\house_15.npz",
+          "aligned_rows_6s": 8170067,
+          "total_windows": 230358,
+          "theoretical_windows": 272316,
+          "rejection_rate_pct": 15.41,
+          "file_size_bytes": 11541888,
+          "valid_refrigerator_windows": 229749,
+          "valid_washing_machine_windows": 229749,
+          "valid_television_windows": 229749,
+          "X_shape": [
+            230358,
+            599,
+            1
+          ],
+          "y_shape": [
+            230358,
+            3
+          ],
+          "elapsed_seconds": 189.36
+        }
+      ]
+    },
+    "test": {
+      "households": [
+        6,
+        10,
+        11,
+        20
+      ],
+      "num_households": 4,
+      "total_windows": 838513,
+      "shards": [
+        {
+          "household_id": 6,
+          "shard_file": "ML\\data\\processed\\REFIT\\test\\house_6.npz",
+          "aligned_rows_6s": 8314793,
+          "total_windows": 227782,
+          "theoretical_windows": 277140,
+          "rejection_rate_pct": 17.81,
+          "file_size_bytes": 13643174,
+          "valid_refrigerator_windows": 226738,
+          "valid_washing_machine_windows": 226738,
+          "valid_television_windows": 226738,
+          "X_shape": [
+            227782,
+            599,
+            1
+          ],
+          "y_shape": [
+            227782,
+            3
+          ],
+          "elapsed_seconds": 156.81
+        },
+        {
+          "household_id": 10,
+          "shard_file": "ML\\data\\processed\\REFIT\\test\\house_10.npz",
+          "aligned_rows_6s": 8452559,
+          "total_windows": 242008,
+          "theoretical_windows": 281733,
+          "rejection_rate_pct": 14.1,
+          "file_size_bytes": 14327750,
+          "valid_refrigerator_windows": 241139,
+          "valid_washing_machine_windows": 241139,
+          "valid_television_windows": 241139,
+          "X_shape": [
+            242008,
+            599,
+            1
+          ],
+          "y_shape": [
+            242008,
+            3
+          ],
+          "elapsed_seconds": 160.69
+        },
+        {
+          "household_id": 11,
+          "shard_file": "ML\\data\\processed\\REFIT\\test\\house_11.npz",
+          "aligned_rows_6s": 5646959,
+          "total_windows": 163100,
+          "theoretical_windows": 188213,
+          "rejection_rate_pct": 13.34,
+          "file_size_bytes": 9920456,
+          "valid_refrigerator_windows": 162259,
+          "valid_washing_machine_windows": 162259,
+          "valid_television_windows": 0,
+          "X_shape": [
+            163100,
+            599,
+            1
+          ],
+          "y_shape": [
+            163100,
+            3
+          ],
+          "elapsed_seconds": 102.3
+        },
+        {
+          "household_id": 20,
+          "shard_file": "ML\\data\\processed\\REFIT\\test\\house_20.npz",
+          "aligned_rows_6s": 6628628,
+          "total_windows": 205623,
+          "theoretical_windows": 220935,
+          "rejection_rate_pct": 6.93,
+          "file_size_bytes": 11399905,
+          "valid_refrigerator_windows": 204997,
+          "valid_washing_machine_windows": 204997,
+          "valid_television_windows": 204997,
+          "X_shape": [
+            205623,
+            599,
+            1
+          ],
+          "y_shape": [
+            205623,
+            3
+          ],
+          "elapsed_seconds": 134.38
+        }
+      ]
+    },
+    "domain_shift": {
+      "households": [
+        21
+      ],
+      "num_households": 1,
+      "total_windows": 187834,
+      "shards": [
+        {
+          "household_id": 21,
+          "shard_file": "ML\\data\\processed\\REFIT\\domain_shift\\house_21.npz",
+          "aligned_rows_6s": 7053363,
+          "total_windows": 187834,
+          "theoretical_windows": 235093,
+          "rejection_rate_pct": 20.1,
+          "file_size_bytes": 11112077,
+          "valid_refrigerator_windows": 187125,
+          "valid_washing_machine_windows": 187125,
+          "valid_television_windows": 187125,
+          "X_shape": [
+            187834,
+            599,
+            1
+          ],
+          "y_shape": [
+            187834,
+            3
+          ],
+          "elapsed_seconds": 128.2
+        }
+      ]
+    }
+  }
+}

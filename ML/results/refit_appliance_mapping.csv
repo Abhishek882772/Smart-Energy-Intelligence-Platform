@@ -1,0 +1,181 @@
+household,filename,appliance_column,appliance_name,appliance_category,is_refrigerator_or_freezer,is_washing_machine,is_television
+1,CLEAN_House1.csv,Appliance1,Fridge,refrigerator,True,False,False
+1,CLEAN_House1.csv,Appliance2,Freezer (1),freezer,True,False,False
+1,CLEAN_House1.csv,Appliance3,Freezer (2),freezer,True,False,False
+1,CLEAN_House1.csv,Appliance4,Washer Dryer,washer dryer,False,True,False
+1,CLEAN_House1.csv,Appliance5,Washing Machine,washing machine,False,True,False
+1,CLEAN_House1.csv,Appliance6,Dishwasher,dishwasher,False,False,False
+1,CLEAN_House1.csv,Appliance7,Computer,computer,False,False,False
+1,CLEAN_House1.csv,Appliance8,Television Site,television,False,False,True
+1,CLEAN_House1.csv,Appliance9,Electric Heater,space heater,False,False,False
+2,CLEAN_House2.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+2,CLEAN_House2.csv,Appliance2,Washing Machine,washing machine,False,True,False
+2,CLEAN_House2.csv,Appliance3,Dishwasher,dishwasher,False,False,False
+2,CLEAN_House2.csv,Appliance4,Television Site,television,False,False,True
+2,CLEAN_House2.csv,Appliance5,Microwave,microwave,False,False,False
+2,CLEAN_House2.csv,Appliance6,Toaster,toaster,False,False,False
+2,CLEAN_House2.csv,Appliance7,Hi-Fi,audio,False,False,False
+2,CLEAN_House2.csv,Appliance8,Kettle,kettle,False,False,False
+2,CLEAN_House2.csv,Appliance9,Overhead Fan,fan,False,False,False
+3,CLEAN_House3.csv,Appliance1,Toaster,toaster,False,False,False
+3,CLEAN_House3.csv,Appliance2,Fridge-Freezer,fridge freezer,True,False,False
+3,CLEAN_House3.csv,Appliance3,Freezer,freezer,True,False,False
+3,CLEAN_House3.csv,Appliance4,Tumble Dryer,tumble dryer,False,False,False
+3,CLEAN_House3.csv,Appliance5,Washing Machine,washing machine,False,True,False
+3,CLEAN_House3.csv,Appliance6,Dishwasher,dishwasher,False,False,False
+3,CLEAN_House3.csv,Appliance7,Computer,computer,False,False,False
+3,CLEAN_House3.csv,Appliance8,Television Site,television,False,False,True
+3,CLEAN_House3.csv,Appliance9,Microwave,microwave,False,False,False
+4,CLEAN_House4.csv,Appliance1,Fridge,refrigerator,True,False,False
+4,CLEAN_House4.csv,Appliance2,Freezer,freezer,True,False,False
+4,CLEAN_House4.csv,Appliance3,Fridge-Freezer,fridge freezer,True,False,False
+4,CLEAN_House4.csv,Appliance4,Washing Machine (1),washing machine,False,True,False
+4,CLEAN_House4.csv,Appliance5,Washing Machine (2),washing machine,False,True,False
+4,CLEAN_House4.csv,Appliance6,Computer,computer,False,False,False
+4,CLEAN_House4.csv,Appliance7,Television Site,television,False,False,True
+4,CLEAN_House4.csv,Appliance8,Microwave,microwave,False,False,False
+4,CLEAN_House4.csv,Appliance9,Kettle,kettle,False,False,False
+5,CLEAN_House5.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+5,CLEAN_House5.csv,Appliance2,Tumble Dryer,tumble dryer,False,False,False
+5,CLEAN_House5.csv,Appliance3,Washing Machine (1),washing machine,False,True,False
+5,CLEAN_House5.csv,Appliance4,Washing Machine (2),washing machine,False,True,False
+5,CLEAN_House5.csv,Appliance5,Dishwasher,dishwasher,False,False,False
+5,CLEAN_House5.csv,Appliance6,Computer,computer,False,False,False
+5,CLEAN_House5.csv,Appliance7,Television Site,television,False,False,True
+5,CLEAN_House5.csv,Appliance8,Microwave,microwave,False,False,False
+5,CLEAN_House5.csv,Appliance9,Kettle,kettle,False,False,False
+6,CLEAN_House6.csv,Appliance1,Freezer,freezer,True,False,False
+6,CLEAN_House6.csv,Appliance2,Washing Machine,washing machine,False,True,False
+6,CLEAN_House6.csv,Appliance3,Dishwasher,dishwasher,False,False,False
+6,CLEAN_House6.csv,Appliance4,MJY Computer,computer,False,False,False
+6,CLEAN_House6.csv,Appliance5,Television Site,television,False,False,True
+6,CLEAN_House6.csv,Appliance6,Microwave,microwave,False,False,False
+6,CLEAN_House6.csv,Appliance7,Kettle,kettle,False,False,False
+6,CLEAN_House6.csv,Appliance8,Toaster,toaster,False,False,False
+6,CLEAN_House6.csv,Appliance9,PGX Computer,computer,False,False,False
+7,CLEAN_House7.csv,Appliance1,Fridge,refrigerator,True,False,False
+7,CLEAN_House7.csv,Appliance2,Freezer (1),freezer,True,False,False
+7,CLEAN_House7.csv,Appliance3,Freezer (2),freezer,True,False,False
+7,CLEAN_House7.csv,Appliance4,Tumble Dryer,tumble dryer,False,False,False
+7,CLEAN_House7.csv,Appliance5,Washing Machine,washing machine,False,True,False
+7,CLEAN_House7.csv,Appliance6,Dishwasher,dishwasher,False,False,False
+7,CLEAN_House7.csv,Appliance7,Television Site,television,False,False,True
+7,CLEAN_House7.csv,Appliance8,Toaster,toaster,False,False,False
+7,CLEAN_House7.csv,Appliance9,Kettle,kettle,False,False,False
+8,CLEAN_House8.csv,Appliance1,Fridge,refrigerator,True,False,False
+8,CLEAN_House8.csv,Appliance2,Freezer,freezer,True,False,False
+8,CLEAN_House8.csv,Appliance3,Dryer,tumble dryer,False,False,False
+8,CLEAN_House8.csv,Appliance4,Washing Machine,washing machine,False,True,False
+8,CLEAN_House8.csv,Appliance5,Toaster,toaster,False,False,False
+8,CLEAN_House8.csv,Appliance6,Computer,computer,False,False,False
+8,CLEAN_House8.csv,Appliance7,Television Site,television,False,False,True
+8,CLEAN_House8.csv,Appliance8,Microwave,microwave,False,False,False
+8,CLEAN_House8.csv,Appliance9,Kettle,kettle,False,False,False
+9,CLEAN_House9.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+9,CLEAN_House9.csv,Appliance2,Washer Dryer,washer dryer,False,True,False
+9,CLEAN_House9.csv,Appliance3,Washing Machine,washing machine,False,True,False
+9,CLEAN_House9.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+9,CLEAN_House9.csv,Appliance5,Television Site,television,False,False,True
+9,CLEAN_House9.csv,Appliance6,Microwave,microwave,False,False,False
+9,CLEAN_House9.csv,Appliance7,Total Control Box,other,False,False,False
+9,CLEAN_House9.csv,Appliance8,Hi-Fi,audio,False,False,False
+9,CLEAN_House9.csv,Appliance9,Electric Heater,space heater,False,False,False
+10,CLEAN_House10.csv,Appliance1,Magimix Blender,blender,False,False,False
+10,CLEAN_House10.csv,Appliance2,Chest Freezer,freezer,True,False,False
+10,CLEAN_House10.csv,Appliance3,Fridge-Freezer,fridge freezer,True,False,False
+10,CLEAN_House10.csv,Appliance4,Washing Machine,washing machine,False,True,False
+10,CLEAN_House10.csv,Appliance5,Dishwasher,dishwasher,False,False,False
+10,CLEAN_House10.csv,Appliance6,Television Site,television,False,False,True
+10,CLEAN_House10.csv,Appliance7,Microwave,microwave,False,False,False
+10,CLEAN_House10.csv,Appliance8,Box Freezer,freezer,True,False,False
+10,CLEAN_House10.csv,Appliance9,Kenwood Mixer,blender,False,False,False
+11,CLEAN_House11.csv,Appliance1,Fridge,refrigerator,True,False,False
+11,CLEAN_House11.csv,Appliance2,Fridge-Freezer,fridge freezer,True,False,False
+11,CLEAN_House11.csv,Appliance3,Washing Machine,washing machine,False,True,False
+11,CLEAN_House11.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+11,CLEAN_House11.csv,Appliance5,Computer,computer,False,False,False
+11,CLEAN_House11.csv,Appliance6,Microwave,microwave,False,False,False
+11,CLEAN_House11.csv,Appliance7,Kettle,kettle,False,False,False
+11,CLEAN_House11.csv,Appliance8,Router,network,False,False,False
+11,CLEAN_House11.csv,Appliance9,Hi-Fi,audio,False,False,False
+12,CLEAN_House12.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+12,CLEAN_House12.csv,Appliance2,Television,television,False,False,True
+12,CLEAN_House12.csv,Appliance3,Microwave,microwave,False,False,False
+12,CLEAN_House12.csv,Appliance4,Kettle,kettle,False,False,False
+12,CLEAN_House12.csv,Appliance5,Toaster,toaster,False,False,False
+12,CLEAN_House12.csv,Appliance6,Washing Machine (unmonitored),other,False,False,False
+12,CLEAN_House12.csv,Appliance7,Not Used,none,False,False,False
+12,CLEAN_House12.csv,Appliance8,Not Used,none,False,False,False
+12,CLEAN_House12.csv,Appliance9,Not Used,none,False,False,False
+13,CLEAN_House13.csv,Appliance1,Television,television,False,False,True
+13,CLEAN_House13.csv,Appliance2,Microwave,microwave,False,False,False
+13,CLEAN_House13.csv,Appliance3,Washing Machine,washing machine,False,True,False
+13,CLEAN_House13.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+13,CLEAN_House13.csv,Appliance5,Fridge,refrigerator,True,False,False
+13,CLEAN_House13.csv,Appliance6,Freezer,freezer,True,False,False
+13,CLEAN_House13.csv,Appliance7,Not Used,none,False,False,False
+13,CLEAN_House13.csv,Appliance8,Not Used,none,False,False,False
+13,CLEAN_House13.csv,Appliance9,Not Used,none,False,False,False
+15,CLEAN_House15.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+15,CLEAN_House15.csv,Appliance2,Tumble Dryer,tumble dryer,False,False,False
+15,CLEAN_House15.csv,Appliance3,Washing Machine,washing machine,False,True,False
+15,CLEAN_House15.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+15,CLEAN_House15.csv,Appliance5,Computer,computer,False,False,False
+15,CLEAN_House15.csv,Appliance6,Television,television,False,False,True
+15,CLEAN_House15.csv,Appliance7,Microwave,microwave,False,False,False
+15,CLEAN_House15.csv,Appliance8,Hi-Fi,audio,False,False,False
+15,CLEAN_House15.csv,Appliance9,Toaster,toaster,False,False,False
+16,CLEAN_House16.csv,Appliance1,Fridge-Freezer (1),fridge freezer,True,False,False
+16,CLEAN_House16.csv,Appliance2,Fridge-Freezer (2),fridge freezer,True,False,False
+16,CLEAN_House16.csv,Appliance3,Washing Machine,washing machine,False,True,False
+16,CLEAN_House16.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+16,CLEAN_House16.csv,Appliance5,Dehumidifier,dehumidifier,False,False,False
+16,CLEAN_House16.csv,Appliance6,Television,television,False,False,True
+16,CLEAN_House16.csv,Appliance7,Microwave,microwave,False,False,False
+16,CLEAN_House16.csv,Appliance8,Computer,computer,False,False,False
+16,CLEAN_House16.csv,Appliance9,Router,network,False,False,False
+17,CLEAN_House17.csv,Appliance1,Freezer,freezer,True,False,False
+17,CLEAN_House17.csv,Appliance2,Washing Machine,washing machine,False,True,False
+17,CLEAN_House17.csv,Appliance3,Tumble Dryer,tumble dryer,False,False,False
+17,CLEAN_House17.csv,Appliance4,Computer,computer,False,False,False
+17,CLEAN_House17.csv,Appliance5,Television,television,False,False,True
+17,CLEAN_House17.csv,Appliance6,Microwave,microwave,False,False,False
+17,CLEAN_House17.csv,Appliance7,Kettle,kettle,False,False,False
+17,CLEAN_House17.csv,Appliance8,Toaster,toaster,False,False,False
+17,CLEAN_House17.csv,Appliance9,Hi-Fi,audio,False,False,False
+18,CLEAN_House18.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+18,CLEAN_House18.csv,Appliance2,Washing Machine,washing machine,False,True,False
+18,CLEAN_House18.csv,Appliance3,Tumble Dryer,tumble dryer,False,False,False
+18,CLEAN_House18.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+18,CLEAN_House18.csv,Appliance5,Computer,computer,False,False,False
+18,CLEAN_House18.csv,Appliance6,Television,television,False,False,True
+18,CLEAN_House18.csv,Appliance7,Microwave,microwave,False,False,False
+18,CLEAN_House18.csv,Appliance8,Kettle,kettle,False,False,False
+18,CLEAN_House18.csv,Appliance9,Toaster,toaster,False,False,False
+19,CLEAN_House19.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+19,CLEAN_House19.csv,Appliance2,Washing Machine,washing machine,False,True,False
+19,CLEAN_House19.csv,Appliance3,Television,television,False,False,True
+19,CLEAN_House19.csv,Appliance4,Microwave,microwave,False,False,False
+19,CLEAN_House19.csv,Appliance5,Kettle,kettle,False,False,False
+19,CLEAN_House19.csv,Appliance6,Toaster,toaster,False,False,False
+19,CLEAN_House19.csv,Appliance7,Breadmaker,breadmaker,False,False,False
+19,CLEAN_House19.csv,Appliance8,Games Console,console,False,False,False
+19,CLEAN_House19.csv,Appliance9,Hi-Fi,audio,False,False,False
+20,CLEAN_House20.csv,Appliance1,Fridge,refrigerator,True,False,False
+20,CLEAN_House20.csv,Appliance2,Freezer,freezer,True,False,False
+20,CLEAN_House20.csv,Appliance3,Washing Machine,washing machine,False,True,False
+20,CLEAN_House20.csv,Appliance4,Tumble Dryer,tumble dryer,False,False,False
+20,CLEAN_House20.csv,Appliance5,Dishwasher,dishwasher,False,False,False
+20,CLEAN_House20.csv,Appliance6,Computer,computer,False,False,False
+20,CLEAN_House20.csv,Appliance7,Television,television,False,False,True
+20,CLEAN_House20.csv,Appliance8,Microwave,microwave,False,False,False
+20,CLEAN_House20.csv,Appliance9,Kettle,kettle,False,False,False
+21,CLEAN_House21.csv,Appliance1,Fridge-Freezer,fridge freezer,True,False,False
+21,CLEAN_House21.csv,Appliance2,Tumble Dryer,tumble dryer,False,False,False
+21,CLEAN_House21.csv,Appliance3,Washing Machine,washing machine,False,True,False
+21,CLEAN_House21.csv,Appliance4,Dishwasher,dishwasher,False,False,False
+21,CLEAN_House21.csv,Appliance5,Food Mixer,blender,False,False,False
+21,CLEAN_House21.csv,Appliance6,Television,television,False,False,True
+21,CLEAN_House21.csv,Appliance7,Kettle/Toaster,kettle,False,False,False
+21,CLEAN_House21.csv,Appliance8,Vivarium,other,False,False,False
+21,CLEAN_House21.csv,Appliance9,Pond Pump,pump,False,False,False
